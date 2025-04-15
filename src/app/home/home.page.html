@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Jogo Pedra, Papel ou Tesoura
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Exibição das escolhas -->
+  <ion-button (click)="jogar('Pedra')">Pedra</ion-button>
+  <ion-button (click)="jogar('Papel')">Papel</ion-button>
+  <ion-button (click)="jogar('Tesoura')">Tesoura</ion-button>
+
+  <!-- Exibir resultado -->
+  <ion-card *ngIf="mostrarResultado">
+    <ion-card-header>
+      <ion-card-title>{{ resultado }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Você escolheu: {{ escolhaUsuario }}</p>
+      <p>Computador escolheu: {{ escolhaComputador }}</p>
+      <hr>
+      <p><strong>Pontuação</strong></p>
+      <p>Você: {{ pontuacaoUsuario }} | Computador: {{ pontuacaoComputador }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botão para reiniciar -->
+  <ion-button (click)="reiniciar()">Reiniciar</ion-button>
+</ion-content>
